@@ -2,10 +2,7 @@ import React from 'react';
 import { Route, RouteComponentProps } from 'react-router-dom';
 import { RouteInterface } from '@/types/route';
 
-export const RouteWithSubRoutes = (
-  route: RouteInterface,
-  index: number,
-) => {
+export const RouteWithSubRoutes = (route: RouteInterface, index: number) => {
   return (
     <Route
       key={index}

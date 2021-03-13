@@ -1,9 +1,6 @@
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 
-export default function useStorage(
-  key: string,
-  defaultValue: any
-): [any, (data: any) => void] {
+export default function useStorage(key: string, defaultValue: any): [any, (data: any) => void] {
   const [value, setValue] = useState<any>(defaultValue);
 
   useEffect(() => {

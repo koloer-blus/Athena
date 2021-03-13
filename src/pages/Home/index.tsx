@@ -1,50 +1,29 @@
-import React, { useState } from 'react';
-import ApiForm from 'components/api-form';
+import React from 'react';
 import { RouteComponentProps } from 'react-router-dom';
+
+import Logo from './logo.svg';
 import './index.less';
-import { Layout, Menu, Breadcrumb } from 'antd';
-import {
-  DesktopOutlined,
-  PieChartOutlined,
-  FileOutlined,
-  TeamOutlined,
-  UserOutlined,
-} from '@ant-design/icons';
-const { Header, Content, Footer, Sider } = Layout;
-const { SubMenu } = Menu;
 
 const HelloWorldDemoPage: React.FC<RouteComponentProps> = () => {
-  const [collapsed, setCollapsed] = useState(true);
-
-  const onCollapse = () => {
-    setCollapsed(!collapsed);
-  };
   return (
-    <Layout style={{ minHeight: '100vh' }}>
-      <Sider
-        collapsible
-        theme="light"
-        collapsed={collapsed}
-        onCollapse={onCollapse}>
-        <Menu theme="light" defaultSelectedKeys={['1']} mode="inline">
-          <Menu.Item key="1" icon={<PieChartOutlined />}>
-            Option 1
-          </Menu.Item>
-        </Menu>
-      </Sider>
-      <Layout className="site-layout">
-        <Header className="site-layout-background" style={{ padding: 0 }} />
-        <Content style={{ padding: 20 }}>
-          <ApiForm
-            name={'test'}
-            style= {{
-              width: '60%'
-            }}
-          />
-        </Content>
-        <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
-      </Layout>
-    </Layout>
+    <div className="App">
+      <header className="App-header">
+        <a className="App-link" href="/demo" target="_blank" rel="demo">
+          Click here jump to demo~
+        </a>
+        <Logo className="App-logo" />
+        <p>
+          Edit <code>src/App.tsx</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer">
+          Learn React
+        </a>
+      </header>
+    </div>
   );
 };
 
