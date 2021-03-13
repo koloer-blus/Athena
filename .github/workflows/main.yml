@@ -36,7 +36,6 @@ jobs:
         uses: wlixcc/SFTP-Deploy-Action@v1.0 
         with:  
           username: 'root'   #ssh user name
-          password: '${{ secrets.ALIYUN_PASSWORD }}'
           server: '${{ secrets.ALIYUN_IP }}' #引用之前创建好的secret
           ssh_private_key: ${{ secrets.ALIYUN }} #引用之前创建好的secret
           local_path: './build/*'  # 对应我们项目build的文件夹路径
