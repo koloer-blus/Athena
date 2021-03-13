@@ -45,7 +45,6 @@ jobs:
           # 私钥
           SSH_PRIVATE_KEY: ${{ secrets.ALIYUN }}
           # scp参数
-          ARGS: "-avzr --delete"
           # 源目录，编译后生成的文件目录
           SOURCE: "./dist"
           # 服务器ip：换成你的服务器IP
