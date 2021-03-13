@@ -38,5 +38,5 @@ jobs:
           username: 'root'   #ssh user name
           server: '${{ secrets.ALIYUN_IP }}' #引用之前创建好的secret
           ssh_private_key: ${{ secrets.ALIYUN }} #引用之前创建好的secret
-          local_path: './build/*'  # 对应我们项目build的文件夹路径
+          local_path: './dist/*'  # 对应我们项目build的文件夹路径
           remote_path: '/var/www/athena'
