@@ -33,10 +33,18 @@ jobs:
       - name: Build
         run: yarn build
       - name: deploy file to server
-        uses: wlixcc/SFTP-Deploy-Action@v1.0 
+        uses: easingthemes/ssh-deploy@v2.1.1
         with:  
           username: 'root'   #ssh user name
-          server: '${{ secrets.ALIYUN_IP }}' #引用之前创建好的secret
-          ssh_private_key: ${{ secrets.ALIYUN }} #引用之前创建好的secret
-          local_path: './build/*'  # 对应我们项目build的文件夹路径
-          remote_path: '/var/www/athena'
+          # 私钥
+          SSH_PRIVATE_KEY: ${{ secrets.ALIYUN }}
+          # scp参数
+          ARGS: "-avzr --delete"
+          # 源目录，编译后生成的文件目录
+          SOURCE: "./dist"
+          # 服务器ip：换成你的服务器IP
+          REMOTE_HOST: '${{ secrets.ALIYUN_IP }}'
+          # 用户
+          REMOTE_USER: "root"
+          # 目标地址 你在服务器上部署代码的地方
+          TARGET: '/var/www/athena'
