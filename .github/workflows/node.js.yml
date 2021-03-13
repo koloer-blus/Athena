@@ -33,5 +33,4 @@ jobs:
           REMOTE_HOST: '${{ secrets.ALIYUN_IP }}' #引用之前创建好的secret
           SSH_PRIVATE_KEY: ${{ secrets.ALIYUN }} #引用之前创建好的secret
           SOURCE: 'dist/'  # 对应我们项目build的文件夹路径
-          ARGS:  "-rltgoDzvO --delete"
           TARGET: '/var/www/athena'
