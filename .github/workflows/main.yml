@@ -35,7 +35,7 @@ jobs:
       - name: deploy file to server
         uses: wlixcc/SFTP-Deploy-Action@v1.0 
         with:  
-          port: 21
+          port: 22
           username: 'root'   #ssh user name
           server: '${{ secrets.ALIYUN_IP }}' #引用之前创建好的secret
           ssh_private_key: ${{ secrets.ALIYUN }} #引用之前创建好的secret
