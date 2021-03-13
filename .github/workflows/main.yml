@@ -24,18 +24,24 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
+      - name: use Node.js 14.16.0
+        # 使用action库  actions/setup-node安装node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.16.0
+      # Runs a single command using the runners shell
+      - name: use yarn
+        # 使用action库  actions/setup-node安装node
+        run: npm install yarn -g
       # Runs a single command using the runners shell
       - name: Install Dependencies
         run: yarn
-
       # Runs a set of commands using the runners shell
       - name: Build
         run: yarn build
       - name: deploy file to server
         uses: easingthemes/ssh-deploy@v2.1.1
         with:  
-          username: 'root'   #ssh user name
           # 私钥
           SSH_PRIVATE_KEY: ${{ secrets.ALIYUN }}
           # scp参数
