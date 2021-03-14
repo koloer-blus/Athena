@@ -7,7 +7,7 @@ import '@/App.less';
 
 const App: React.FC = () => {
   return (
-    <Router>
+    <Router basename="/athena">
       <ScrollToTop />
       {RenderRoutes(routes)}
     </Router>
