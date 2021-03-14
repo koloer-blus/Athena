@@ -38,7 +38,7 @@ jobs:
     # 
          host: '${{ secrets.ALIYUN_IP }}'
          port: 22
-         username: 'sftp1'
-         password: '586014BZYbzy'
+         username: 'root'
+         password: '${{ secrets.ALIYUN_PASSWORD }}'
          localDir: './dist'
          remoteDir: '/var/www/athena'
