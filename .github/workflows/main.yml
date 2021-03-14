@@ -2,13 +2,13 @@
 
 name: CI
 
-# Controls when the action will run. 
+# Controls when the action will run.
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -35,10 +35,10 @@ jobs:
       - name: deploy file to server
         uses: wangyucode/sftp-upload-action@v1.1
         with:
-    # 
-         host: '${{ secrets.ALIYUN_IP }}'
-         port: 22
-         username: 'root'
-         password: '${{ secrets.ALIYUN_PASSWORD }}'
-         localDir: './dist'
-         remoteDir: '/var/www/athena'
+          #
+          host: "${{ secrets.ALIYUN_IP }}"
+          port: 22
+          username: "root"
+          password: "${{ secrets.ALIYUN_PASSWORD }}"
+          localDir: "./dist"
+          remoteDir: "/project/athena"
