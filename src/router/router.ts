@@ -1,20 +1,20 @@
 import loadable from '@loadable/component';
 import { RouteInterface } from '@/types/route';
-export const basename = '';
+export const basename = '/athena';
 
 export const routes: RouteInterface[] = [
   {
     path: '/',
     exact: true,
-    component: loadable(() => import('@/pages/Home')),
-    name: 'home',
-    title: 'home',
+    component: loadable(() => import('@/pages/dashboard')),
+    name: 'dashboard',
+    title: 'dashboard',
   },
   {
-    path: '/demo',
+    path: '/login',
     exact: true,
-    component: loadable(() => import('@/pages/Demo')),
-    name: 'demo',
-    title: 'demo',
+    component: loadable(() => import('@/pages/login')),
+    name: 'login',
+    title: 'login',
   },
 ];

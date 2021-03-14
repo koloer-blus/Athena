@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, RouteComponentProps } from 'react-router-dom';
+import { Route, RouteComponentProps, Redirect } from 'react-router-dom';
 import { RouteInterface } from '@/types/route';
 
 export const RouteWithSubRoutes = (route: RouteInterface, index: number) => {

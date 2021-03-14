@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch } from 'react-router-dom';
+import { Switch, Redirect } from 'react-router-dom';
 import { RouteInterface } from 'types/route';
 import { RouteWithSubRoutes } from './RouteWithSubRoutes';
 
