@@ -41,4 +41,4 @@ jobs:
          username: 'sftp1'
          password: '1234567890'
          localDir: './dist'
-         remoteDir: '/athena'
+         remoteDir: '/upload/athena'
