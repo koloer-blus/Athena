@@ -32,12 +32,13 @@ jobs:
       # Runs a set of commands using the runners shell
 #       - name: Build
 #         run: yarn build
-      - name: deploy file to server
-        uses: wlixcc/SFTP-Deploy-Action@v1.0 
-        with:  
-          port: 22
-          username: 'sftp1'   #ssh user name
-          server: '${{ secrets.ALIYUN_IP }}' #引用之前创建好的secret
-          ssh_private_key: ${{ secrets.ALIYUN }} #引用之前创建好的secret
-          local_path: './src'  # 对应我们项目build的文件夹路径
-          remote_path: '/var/www/athena'
+    - name: deploy file to server
+      uses: wangyucode/sftp-upload-action@v1.1
+      with:
+    # 
+         host: '${{ secrets.ALIYUN_IP }}'
+         port: 22
+         username: 'sftp1'
+         password: '1234567890'
+         localDir: './dist'
+         remoteDir: '/var/www/athena'
