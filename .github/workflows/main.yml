@@ -41,4 +41,4 @@ jobs:
           username: "root"
           password: "${{ secrets.ALIYUN_PASSWORD }}"
           localDir: "./dist"
-          remoteDir: "/athena/web/public"
+          remoteDir: "/projects/web-page/athena"
