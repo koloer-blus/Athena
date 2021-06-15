@@ -1,11 +1,15 @@
 import React from 'react';
-import { BrowserRouter as Router, Redirect } from 'react-router-dom';
-import { routes, basename } from '@/router/router';
-import { RenderRoutes } from '@/router/RenderRoutes';
+import { BrowserRouter as Router, Redirect, Route } from 'react-router-dom';
+import LinkList from '@/pages/link-list';
+import Page from '@/pages/index';
 import '@/App.less';
 
 const App: React.FC = () => {
-  return <Router basename={basename}>{RenderRoutes(routes)}</Router>;
+  return (
+    <Router>
+      <Route path="/link-list" component={LinkList} />
+    </Router>
+  );
 };
 
 export default App;
